@@ -1,9 +1,9 @@
-"use client";
-import { Button } from "@/components/ui/button";
-
+import { Editor } from "./features/editor/components/editor";
 
 export default function Home() {
   return (
-    <Button onClick={()=>{}}>Click me</Button>
+    <div className="flex-1 flex flex-col">
+      {/* <Editor /> */}
+    </div>
   );
 }
