@@ -1,8 +1,14 @@
 
 import { fabric } from "fabric";
 
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { useAutoResize } from './use_auto_resize';
+
+const buildEditor = ()=>{
+   return {
+      addCircle:()=>{}
+   }
+}
 
 export const useEditor = ()=>{
    const[canvas,setCanvas] = useState<fabric.Canvas| null>(null);
@@ -17,6 +23,17 @@ export const useEditor = ()=>{
       canvas,
       container,
    });
+
+
+   // ----------------------
+   // shapes ko print kerne wale hai usme so that when there is multiple  shapes then only new shapes get rerender
+
+   const editior = useMemo(()=>{
+      if(canvas){
+         return buildEditor();
+      }
+
+   },[])
 
 
 // ------------------------------------
@@ -76,5 +93,5 @@ export const useEditor = ()=>{
       // initialCanvas.clipPath = test;
    
    },[]);
-   return {init};
+   return {init,editior};
 }

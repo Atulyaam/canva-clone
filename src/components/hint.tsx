@@ -24,7 +24,7 @@ export const Hint = ({
   return (
     <TooltipProvider>
       <Tooltip delayDuration={100}>
-        <TooltipTrigger asChild>
+        <TooltipTrigger render={<span className="inline-flex" />}>
          {children}
          </TooltipTrigger>
         <TooltipContent

@@ -16,8 +16,8 @@ import {
    MousePointer2,
    Link,
  } from "lucide-react";
-import { SidebarItem } from "./sidebar-item";
-import {ActiveTool} from "../types"
+import { SidebarItem } from "./components/SidebarComponents/sidebar-item";
+import { ActiveTool } from "./types"
 
 
 interface SidebarProps {
